@@ -1,0 +1,17 @@
+extends base.pug
+
+block content
+  .container
+    include nav.pug
+    #home
+      h1#home-heading Kyle Silver
+      .separator
+      p !{content}
+      h2 Blog
+      .posts
+        ul
+          // up to 5 posts, but no more!
+          each blogpost in collections.blogposts.slice(0, 5)
+            include mixins.pug
+            li #[+tile(blogpost)]
+      //- h2 Projects

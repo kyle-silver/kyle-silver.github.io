@@ -1,0 +1,6 @@
+
+// a "blogpost" is all of the frontmatter from a markdown document
+mixin tile(blogpost)
+  .tile
+    h3 #[a(href=blogpost.url) !{blogpost.data.title}] 
+    p !{blogpost.data.preview} #[a(class='teaser-link' href=blogpost.url) read&nbsp;more&nbsp;->]

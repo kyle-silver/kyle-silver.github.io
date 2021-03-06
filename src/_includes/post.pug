@@ -1,0 +1,11 @@
+extends base.pug
+
+block content
+  .container
+    include nav.pug
+    #article
+      h1#home-heading !{title}
+      .separator
+      .content !{content}
+    #footer
+      p Kyle Silver (c) !{copyright_year}
