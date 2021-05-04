@@ -1,14 +1,17 @@
 :root {
-    --code-bg: #282828;
+    --code-bg: #3c3836;
     --bg: #1d2021;
-    --red: #cc241d;
+    --red: #fb4934;
     --green: #98971a;
     --yellow: #d79921;
-    --blue: #458588;
+    --orange: #fe8019;
+    --blue: #83a598;
     --purple: #b16286;
+    --purple-hr: #d3869b;
     --aqua: #689d6a;
     --gray: #a89984;
-    --fg: #ebdbb2;
+    --fg-h: #ebdbb2;
+    --fg: #d5c4a1
 }
 
 body {
@@ -19,6 +22,7 @@ body {
 
 :is(h1, h2, h3, h4, h5, h6) {
     font-family: 'Fira Code', monospace;
+    color: var(--fg-h);
 }
 
 
@@ -162,4 +166,47 @@ a.teaser-link:hover {
 .posts li:hover {
     outline: 10px solid var(--bg);
     box-shadow: -15px 0 0 var(--aqua);
+}
+
+.codeblock pre {
+    font-family: 'Fira Code', monospace;
+    padding-bottom: 1rem;
+}
+
+.codeblock {
+    background-color: var(--code-bg);
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: -1rem;
+    border-bottom-left-radius: var(--codeblock-radius);
+    border-bottom-right-radius: var(--codeblock-radius);
+    border-top: 3px solid var(--purple-hr);
+    overflow-x: scroll
+}
+
+.codeblock pre {
+    margin: 0;
+    padding-bottom: 0;
+}
+
+.codeblock-wrap {
+    --codeblock-radius: 5px;
+    font-size: 0.9em;
+    color: var(--fg-h);
+}
+
+.codeblock-header {
+    background-color: var(--purple);
+    border-top-left-radius: var(--codeblock-radius);
+    border-top-right-radius: var(--codeblock-radius);
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.codeblock-header p {
+    padding-top: 3px;
+    padding-bottom: 2px;
+    font-weight: 700;
 }
