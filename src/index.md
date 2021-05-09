@@ -2,6 +2,6 @@
 layout: home.pug
 title: Kyle Silver
 ---
-Hi there, I'm Kyle - welcome to my website. My main interests are in music and programming, and when I think I have something to say on a topic I'll write it up and post it here.
+Hi there! I'm Kyle. My main interests are in music and programming, and occasionally I&rsquo;ll post here if I feel I have something interesting to say.
 
-So take your shoes off and stay a while, I hope you'll find something here that interests you.
+So take your shoes off and stay a while, hopefully you&rsquo;ll find something here that interests you.

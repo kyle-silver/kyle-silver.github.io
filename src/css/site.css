@@ -25,6 +25,16 @@ body {
     color: var(--fg-h);
 }
 
+body p {
+    font-size: large;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 200;
+}
+
+body strong {
+    font-weight: 400;
+}
+
 
 /* header links */
 
@@ -53,8 +63,11 @@ body {
 
 #footer {
     text-align: center;
-    font-family: 'Fira Code', monospace;
     color: var(--gray);
+}
+
+#footer p {
+    font-family: 'Jetbrains Mono', monospace;
 }
 
 
@@ -160,7 +173,12 @@ h1 {
 }
 
 a.teaser-link:hover {
-    color: var(--aqua)
+    color: var(--aqua);
+}
+
+.teaser-link {
+    font-family: 'Fira Code', monospace;
+    font-weight: 500;
 }
 
 .posts li:hover {
@@ -209,4 +227,11 @@ a.teaser-link:hover {
     padding-top: 3px;
     padding-bottom: 2px;
     font-weight: 700;
+    font-size: unset;
+    font-family: 'Jetbrains Mono', monospace;
+}
+
+.inline-code {
+    font-family: 'Fira Code', monospace;
+    font-size: smaller;
 }
