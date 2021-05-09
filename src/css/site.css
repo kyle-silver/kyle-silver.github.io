@@ -235,3 +235,7 @@ a.teaser-link:hover {
     font-family: 'Fira Code', monospace;
     font-size: smaller;
 }
+
+img {
+    max-width: 100%;
+}
