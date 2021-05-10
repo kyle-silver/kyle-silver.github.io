@@ -159,4 +159,37 @@ First and foremost, not all combinations of interval size and quality are valid.
     </div>
 </div>
 
-In one sense, yes&mdash;however this isn&rsquo;t the option I chose. This implementation is correct, but very verbose to deal with when writing methods that interact with it. Sometimes, that&rsquo;s okay because of the inherent complexity of the problem-space, but in our case the first implementation provides an easier interface to work with once we know that the struct is valid. What does validating the code look like, then?
+In one sense, yes&mdash;however this isn&rsquo;t the option I chose. This implementation is correct, but very verbose to deal with when writing methods that interact with it. Sometimes, that&rsquo;s okay because of the inherent complexity of the problem-space, but in our case the first implementation provides an easier interface to work with once we know that the struct is valid. What does validating the code look like, then? Well, while diminished and augmented intervals can be applied to any size, perfect and major/minor intervals are mutually exclusive. Let&rsquo;s try using a constructor to enforce this.
+
+<div class="codeblock-wrap">
+    <div class="codeblock-header">
+        <p>&lt;code lang="rust"/&gt;</p>
+    </div>
+    <div class="codeblock">
+        <pre>
+<span style="color:var(--red)">impl</span> <span style="color:var(--blue)">Interval</span> {
+    <span style="color:var(--red)">pub fn</span> <span style="color:var(--green)">new</span>(size<span style="color:var(--orange)">:</span> <span style="color:var(--blue)">IntervalSize</span>, quality<span style="color:var(--orange)">:</span> <span style="color:var(--blue)">IntervalQuality</span>) <span style="color:var(--orange)">-></span> <span style="color:var(--blue)">Result</span><<span style="color:var(--blue)">Interval</span>, <span style="color:var(--blue)">IntervalError</span>> {
+        <span style="color:var(--red)">use</span> <span style="color:var(--blue)">IntervalSize</span><span style="color:var(--orange)">::*</span>;
+        <span style="color:var(--red)">use</span> <span style="color:var(--blue)">IntervalQuality</span><span style="color:var(--orange)">::*</span>;
+        <span style="color:var(--red)">match</span> quality {
+            Major <span style="color:var(--orange)">|</span> Minor <span style="color:var(--orange)">=></span> <span style="color:var(--red)">match</span> size {
+                Unison <span style="color:var(--orange)">|</span> Fourth <span style="color:var(--orange)">|</span> Fifth <span style="color:var(--orange)">=></span> {
+                    Err(<span style="color:var(--blue)">IntervalError</span><span style="color:var(--orange)">::</span>InvalidQualityAndSizeCombination)
+                },
+                _ <span style="color:var(--orange)">=></span> Ok(<span style="color:var(--blue)">Interval</span> { size, quality }),
+            },
+            Perfect <span style="color:var(--orange)">=></span> <span style="color:var(--red)">match</span> size {
+                Second <span style="color:var(--orange)">|</span> Third <span style="color:var(--orange)">|</span> Sixth <span style="color:var(--orange)">|</span> Seventh <span style="color:var(--orange)">=></span> {
+                    Err(<span style="color:var(--blue)">IntervalError</span><span style="color:var(--orange)">::</span>InvalidQualityAndSizeCombination)
+                },
+                _ <span style="color:var(--orange)">=></span> Ok(<span style="color:var(--blue)">Interval</span> { size, quality }),
+            },
+            _ <span style="color:var(--orange)">=></span> Ok(<span style="color:var(--blue)">Interval</span> { size, quality }),
+        }
+    }
+}
+</pre>
+    </div>
+</div>
+
+That... looks like a lot. But at it&rsquo;s core all it&rsquo;s doing is matching on interval quality and then checking whether the provided size is allowed. And the return type of <b><span class="inline-code">Result</span></b> means that any errors will be handled gracefully.

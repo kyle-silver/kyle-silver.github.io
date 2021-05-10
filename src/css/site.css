@@ -2,7 +2,7 @@
     --code-bg: #3c3836;
     --bg: #1d2021;
     --red: #fb4934;
-    --green: #98971a;
+    --green: #b8bb26;
     --yellow: #d79921;
     --orange: #fe8019;
     --blue: #83a598;
@@ -15,6 +15,7 @@
 }
 
 body {
+    --content-max-width: 40em;
     font-family: 'JetBrains Mono', monospace;
     background-color: var(--bg);
     color: var(--fg);
@@ -75,7 +76,7 @@ body strong {
 
 div.container {
     margin: auto;
-    max-width: 40em;
+    max-width: var(--content-max-width)
 }
 
 p {
@@ -213,6 +214,13 @@ a.teaser-link:hover {
     --codeblock-radius: 5px;
     font-size: 0.9em;
     color: var(--fg-h);
+}
+
+@media only screen and (min-width: calc(52em)) {
+    .codeblock-wrap {
+        margin-left: -10%;
+        margin-right: -10%;
+    }
 }
 
 .codeblock-header {
