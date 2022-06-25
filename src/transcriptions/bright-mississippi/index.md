@@ -1,7 +1,7 @@
 ---
 layout: post.pug
 title: Bright Mississippi (Wynton Marsalis)
-preview: I originally transcribed this solo back in 2017, but I was never entirely happy with it. Marsalis plays some sections with such speed that even slowing the recording down to a glacial pace in Audacity didn&rsquo;t help. Instead I needed rely on my knowledge of improvisational idioms, the mechanics of trumpet playing, and gut instinct&hellip;
+preview: I originally transcribed this solo back in 2017 but was never really happy with the final result. The playing is just <i>so fast</i> that even after slowing the recording down to 10% speed in Audacity it was still hard to make out exactly what was going on. With technology failing me once again, I had to take a more <i>vibes-based</i> approach
 year: 2021
 month: "09"
 day: "04"
@@ -10,7 +10,7 @@ order: 10
 
 <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/el9Um6T8ZKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-I originally transcribed this solo back in 2017, but I was never entirely happy with it. Marsalis can play with such speed that even slowing the recording down to a glacial pace in Audacity didn&rsquo;t help. Instead I needed rely on my knowledge of improvisational idioms, the mechanics of trumpet playing, and gut instinct. Even with all of that, I can&rsquo;t guarantee that this is 100% accurate: it&rsquo;s my best approximation after many, many revisions, but without a video of Wynton&rsquo;s fingers from the night this was recorded, there will always be a little bit of doubt.
+I originally transcribed this solo back in 2017 but was never really happy with the final result. The playing is just *so fast* that even after slowing the recording down to 10% speed in Audacity it was still hard to make out exactly what was going on. With technology failing me once again, I had to take a more *vibes-based* approach. Using the chord changes and the general melodic shape, I think I&rsquo;ve landed on something that&rsquo;s serviceable, although probably not 100% accurate. Without a video of Wynton&rsquo;s fingers from the night this was recorded, there will always be a little bit of doubt.
 
 <img
     alt="A transcription of a fast section from Wynton&rsquo;s solo"
@@ -42,6 +42,6 @@ and for completeness, here&rsquo;s my transcription at half-speed.
     <source type="audio/mp3" src="fast-section-midi-playback-half-speed.mp3">
 </audio>
 
-In my attempt to notate and &ldquo;square off&rdquo; the rougher edges of the recording, I __do__ think that there are some notes that get lost in the mix. But we&rsquo;re talking about hundredths of a second here, and in the broader context of making this transcription a useful learning tool I think there&rsquo;s a balance to be struck between absolute accuracy and utility to a developing musician.
+In my attempt to notate and &ldquo;square off&rdquo; the rougher edges of the recording, I *do* think that there are some n   otes that get lost in the mix. But we&rsquo;re talking about hundredths of a second here, and in the broader context of making this transcription a useful learning tool I think there&rsquo;s a balance to be struck between absolute accuracy and readability.
 
 A PDF of the transcription is available for download [here](bright-mississippi-wynton-marsalis-transcription.pdf).

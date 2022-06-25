@@ -45,6 +45,12 @@ h5 {
     align-items: baseline;
 }
 
+@media only screen and (max-width: 45rem) {
+    .nav-items  {
+        display: block;
+    }
+}
+
 .nav-items span {
     width: 2rem;
 }
@@ -226,13 +232,19 @@ audio {
     width: 75%;
 }
 
+@media only screen and (max-width: 45rem) {
+    audio {
+        width: 100%;
+    }
+}
+
 #article img {
     max-width: 100%;
 }
 
 /* kerning for musical symbols */
 .flat {
-    letter-spacing: -4px;
+    letter-spacing: -5px;
 }
 
 .sharp {
