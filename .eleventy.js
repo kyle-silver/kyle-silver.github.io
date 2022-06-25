@@ -2,19 +2,17 @@ module.exports = function (eleventyConfig) {
     // copies resources from root directory folder into _site
     // so it can be rendered in the browser
     // thanks to https://michaelsoolee.com/add-css-11ty/
-    eleventyConfig.addPassthroughCopy("src/css");
-    eleventyConfig.addPassthroughCopy("src/media");
-    eleventyConfig.addPassthroughCopy("src/fonts");
+    eleventyConfig.addPassthroughCopy("src/");
 
     // for the different content lists
     eleventyConfig.addCollection("blogposts", (collection) => {
-        return orderedGlob(collection, "./src/blog/*.md");
+        return orderedGlob(collection, "./src/blog/**/*.md");
     });
     eleventyConfig.addCollection("compositions", (collection) => {
-        return orderedGlob(collection, "./src/compositions/*.md");
+        return orderedGlob(collection, "./src/compositions/**/*.md");
     });
     eleventyConfig.addCollection("transcriptions", (collection) => {
-        return orderedGlob(collection, "./src/transcriptions/*.md");
+        return orderedGlob(collection, "./src/transcriptions/**/*.md");
     });
     // grouped by year
     eleventyConfig.addCollection("bucketed_posts", bucketedBlogposts);
@@ -53,7 +51,7 @@ function orderedGlob(collection, glob) {
  * @param {*} collection
  */
 function bucketedBlogposts(collection) {
-    let allPosts = collection.getFilteredByGlob("./src/blog/*.md");
+    let allPosts = collection.getFilteredByGlob("./src/blog/**/*.md");
     let buckets = {};
     allPosts.forEach((post) => {
         let year = post.data.year;
