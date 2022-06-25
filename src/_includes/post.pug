@@ -1,0 +1,19 @@
+extends base.pug
+
+block content
+  .container
+    include nav.pug
+    #article
+      h2#home-heading !{title}
+      .content !{content}
+    hr
+    p.date-tag Published !{year}-!{month}-!{day}
+    #up-next
+      .prev
+        if prev_link && prev_title
+          p.prompt #[a(href=`${prev_link}`) &laquo;&nbsp;previous article]
+          p #[a(href=`${prev_link}`) !{prev_title}]
+      .next 
+        if next_link && next_title
+          p.prompt #[a(href=`${next_link}`) next article&nbsp;&raquo;]
+          p #[a(href=`${next_link}`) !{next_title}]

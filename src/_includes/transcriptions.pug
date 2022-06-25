@@ -1,0 +1,14 @@
+extends base.pug
+
+block content
+  .container
+    include nav.pug
+    h2 Transcriptions
+    p !{content}
+    br
+    .posts
+      ul
+        include mixins.pug
+        each transcription in collections.transcriptions
+          li #[+tile(transcription)]
+        br

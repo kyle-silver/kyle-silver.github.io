@@ -1,0 +1,16 @@
+extends base.pug
+
+block content
+  .container
+    include nav.pug
+    h2 Blog
+    p !{content}
+    br
+    .posts
+      ul
+        include mixins.pug
+        each bucket in collections.bucketed_posts
+          h2.date !{bucket.year}
+          each blogpost in bucket.posts
+            li #[+tile(blogpost)]
+          br

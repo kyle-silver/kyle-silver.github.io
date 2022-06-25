@@ -1,0 +1,14 @@
+extends base.pug
+
+block content
+  .container
+    include nav.pug
+    h2 Compositions
+    p !{content}
+    br
+    .posts
+      ul
+        include mixins.pug
+        each composition in collections.compositions
+          li #[+tile(composition)]
+        br
