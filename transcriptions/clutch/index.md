@@ -12,6 +12,6 @@ order: 10
 
 This is one of my favorite tracks from the entire soundtrack. It&rsquo;s a throwback to the hard-bop, small-ensemble style of Horace Silver, Art Blakey, and Dexter Gordon&mdash;and Tomonao Hara really captures a lot of the magic that makes this a really thrilling solo. I had a ton of fun transcribing this one.
 
-One thing that I love about this composition is how it riffs on **Kind of Blue**. The chord progression spends a long time alternating between D minor and <span class="flat">E&flat;</span> minor&mdash;just like in Kind of Blue; but instead of a slow, laid-back swing, the tempo has been cranked up to over 300 beats per minute, nearly twice as fast!
+One thing that I love about this composition is how it riffs on __Kind of Blue__. The chord progression spends a long time alternating between D minor and <span class="flat">E&flat;</span> minor&mdash;just like in Kind of Blue; but instead of a slow, laid-back swing, the tempo has been cranked up to over 300 beats per minute, nearly twice as fast!
 
 A PDF of the solo is available for download [here](clutch-trumpet-solo-transcription-b-flat.pdf).

@@ -42,6 +42,6 @@ and for completeness, here&rsquo;s my transcription at half-speed.
     <source type="audio/mp3" src="fast-section-midi-playback-half-speed.mp3">
 </audio>
 
-In my attempt to notate and &ldquo;square off&rdquo; the rougher edges of the recording, I **do** think that there are some notes that get lost in the mix. But we&rsquo;re talking about hundredths of a second here, and in the broader context of making this transcription a useful learning tool I think there&rsquo;s a balance to be struck between absolute accuracy and utility to a developing musician.
+In my attempt to notate and &ldquo;square off&rdquo; the rougher edges of the recording, I __do__ think that there are some notes that get lost in the mix. But we&rsquo;re talking about hundredths of a second here, and in the broader context of making this transcription a useful learning tool I think there&rsquo;s a balance to be struck between absolute accuracy and utility to a developing musician.
 
 A PDF of the transcription is available for download [here](bright-mississippi-wynton-marsalis-transcription.pdf).
