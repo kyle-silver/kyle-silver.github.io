@@ -4,17 +4,17 @@ block content
   .container
       include nav.pug
       p !{content}
-      //- h2
-      //-   a(href="/blog" class="content-list-heading-wrapper")
-      //-     span.content-list-heading Recent Posts
-      //-     span.content-list-hidden &nbsp;\#[more]
-      //- .posts
-      //-   ul
-      //-     // up to 3 posts, but no more!
-      //-     each blogpost in collections.blogposts.slice(0, 3)
-      //-       include mixins.pug
-      //-       li #[+tile(blogpost)]
-      //- br
+      h2
+        a(href="/blog" class="content-list-heading-wrapper")
+          span.content-list-heading Recent Posts
+          span.content-list-hidden &nbsp;\#[more]
+      .posts
+        ul
+          // up to 3 posts, but no more!
+          each blogpost in collections.blogposts.slice(0, 3)
+            include mixins.pug
+            li #[+tile(blogpost)]
+      br
       h2
         a(href="/compositions" class="content-list-heading-wrapper")
           span.content-list-heading Compositions

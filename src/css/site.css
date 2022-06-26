@@ -5,6 +5,7 @@
     --black: #000000;
     --link: #8b72e8;
     --gray: #cdd1d8;
+    --code-bg: #ebeef1;
     --ayu-bg: #fafafa;
     --ayu-fg: #575f66;
     --ayu-gray: #abb0b6;
@@ -213,7 +214,10 @@ a.tile-link:hover {
 code {
     font-family: "Jetbrains Mono", monospace;
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 100;
+    background-color: var(--code-bg);
+    padding-left: 2.5px;
+    padding-right: 2.5px;
 }
 
 /* media */
@@ -318,4 +322,25 @@ audio {
 
 #up-next a:hover {
     color: var(--accent);
+}
+
+
+/** Swear on my life I'm only using this for a blinking cursor in a mock terminal */
+blink, .blink { animation: blink 2.5s step-end infinite; }
+
+@keyframes blink {
+  67% { opacity: 0 }
+}
+
+/** code highlighting **/
+.cd-blue {
+    color: var(--ayu-blue)
+}
+
+.cd-orange {
+    color: var(--ayu-orange)
+}
+
+.cd-green {
+    color: var(--ayu-green)
 }
