@@ -1,0 +1,71 @@
+<!DOCTYPE html><html><title>Kyle Silver</title><head><link rel="stylesheet" href="/css/site.css"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,800;1,300;1,800&amp;display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1"></head><body><div class="container"><div id="nav"><ul class="nav-items"><li><a href="/">home</a></li><span></span><li><a href="/blog">blog</a></li><span></span><li><a href="/compositions">compositions</a></li><span></span><li><a href="/transcriptions">transcriptions</a></li><span></span><li><a href="//github.com/kyle-silver">github</a></li></ul></div><h1>Kyle Silver</h1><div class="separator"></div><div id="article"><h2 id="home-heading">Lear: A Shakespearian Command Line Utility</h2><div class="content"><p>I love quirky command line utilities. Sometimes the <a href="https://www.youtube.com/watch?v=vm1GJMp0QN4&amp;t=2460">“animal brain of Unix”</a> will happily provide its own weirdness—the <em>two-letter gang</em> (ed, dc, et al.) is always a safe bet for doing something other than what you expect—but it’s the community-driven space where things really get wild.</p>
+<p>Some of my favorites include <a href="https://en.wikipedia.org/wiki/Fortune_(Unix)">fortune</a>, <a href="https://en.wikipedia.org/wiki/Cowsay">cowsay</a>, and <a href="https://github.com/busyloop/lolcat">lolcat</a>, but <a href="https://github.com/mtoyoda/sl">sl</a> has a special place in my heart. Whenever you mistype <code>ls</code>, it plays an agonizingly slow animation of a slow locomotive making its way across your screen. And just to be extra annoying, it eats <code>Ctrl+C</code> and <code>Ctrl+D</code> (although you can still background it with <code>Ctrl+Z</code> if you want to be a buzzkill). As I was becoming more proficient with Rust and the crate ecosystem, I wanted to contribute my own weird, useless utility to this canon of highly serious programs.</p>
+<h2>The Idea</h2>
+<p><code>lear</code> is a program that prints a random quote from <em>King Lear</em> every time you mistype <code>clear</code> into your console. This is something that I do with some frequency as I am not a very good typist.</p>
+<p>As you can see from this dramatic re-enactment based on real-life events, <code>lear</code> works well, even in high pressure situations.</p>
+<pre class="code">
+<span class=cd-orange>kyle@mbp</span> <b>&raquo;</b> lear
+<b>GONERIL</b>
+ [Aside] O, ho, I know the riddle.--I will go.
+
+ <i>As they are going out, enter EDGAR disguised</i>
+
+<b>EDGAR</b>
+ If e'er your grace had speech with man so poor,
+ Hear me one word.
+
+<b>ALBANY</b>
+ I'll overtake you. Speak.
+
+ <i>Exeunt all but ALBANY and EDGAR</i>
+
+                                                          <i>(Lr. 5.1.43-46)</i>
+<span class=cd-orange>kyle@mbp</span> <b>&raquo;</b> ^C
+<span class=cd-orange>kyle@mbp</span> <b>&raquo;</b> ^C
+<span class=cd-orange>kyle@mbp</span> <b>&raquo;</b> arghhhh
+bash: arghhhh: command not found
+<span class=cd-orange>kyle@mbp</span> <b>&raquo;</b> <span class="blink">_</span>
+</pre>
+<p>For no practical reason, <code>lear</code> also supports the ability to quote specific passages with the addition of a few command-line arguments</p>
+<pre class="code">
+<span class=cd-orange>kyle@mbp</span> <b>&raquo;</b> lear quote 5 3 383 386
+<b>ALBANY</b>
+ The weight of this sad time we must obey;
+ Speak what we feel, not what we ought to say.
+ The oldest hath borne most: we that are young
+ Shall never see so much, nor live so long.
+
+                                                        <i>(Lr. 5.3.383-386)</i>
+</pre>
+<p><code>lear</code> can be installed on MacOS via Homebrew or installed from source using cargo. Full installation instructions are available on <a href="https://github.com/kyle-silver/lear">GitHub</a>.</p>
+<h2>Making Lear</h2>
+<p>The first challenge after coming up with the initial idea was finding a copy of <em>King Lear</em> that I could use. It almost goes without saying, but in order for <code>lear</code> to be true to its name, it needed all of <em>King Lear</em> to be included as part of the final program—and if I couldn’t find a free, online copy to use… well this project was going to be dead in the water.</p>
+<p>As much as I was dedicated to this project, typing all 27,000+ words of the play from a physical copy was going to be too much of a time commitment. Thankfully MIT has been hosting the <a href="http://shakespeare.mit.edu/index.html">complete works of Shakespeare</a> online (since 1993? What??) and they’ve placed the HTML versions they created into the public domain. Sweet! Thanks <a href="https://twitter.com/jeremyhylton">Jeremy</a>, that must have been a lot of typing and I’m very grateful that you did it several years before I was born because I don’t have the attention span to commit to that kind of thing. <em>Yoink!</em></p>
+<p>This was only the beginning of my text processing woes, though. As any machine learning enthusiast will tell you, after you’ve gotten your raw data, you need to standardize, sanitize, and normalize it. And in this case, the pre-netscape HTML had quite a few quirks. On the plus side, every line had its own name attribute with the act, scene, and line numbers! Thanks Jeremy! On the other hand, though, everything was composed of <code>&lt;a&gt;</code> and <code>&lt;blockquote&gt;</code> tags, with <code>&lt;p&gt;</code> tags only being used for stage directions. What the heck, Jeremy!</p>
+<pre class="code">
+<span class=cd-blue>&lt;A</span> <span class=cd-orange>NAME</span>=<span class=cd-green>speech13</span><span class=cd-blue>&gt;</span>
+  <span class=cd-blue>&lt;b&gt;</span>EDMUND<span class=cd-blue>&lt;/b&gt;</span>
+<span class=cd-blue>&lt;/a&gt;</span>
+<span class=cd-blue>&lt;blockquote&gt;</span>
+  <span class=cd-blue>&lt;A</span> <span class=cd-orange>NAME</span>=<span class=cd-green>1.1.31</span><span class=cd-blue>&gt;</span>Sir, I shall study deserving.<span class=cd-blue>&lt;/A&gt;</span><span class=cd-blue>&lt;br&gt;</span>
+<span class=cd-blue>&lt;/blockquote&gt;</span>
+<span class=cd-blue>&lt;A</span> <span class=cd-orange>NAME</span>=<span class=cd-green>speech13</span><span class=cd-blue>&gt;</span>
+  <span class=cd-blue>&lt;b&gt;</span>GLOUCESTER<span class=cd-blue>&lt;/b&gt;</span>
+<span class=cd-blue>&lt;/a&gt;</span>
+<span class=cd-blue>&lt;blockquote&gt;</span>
+  <span class=cd-blue>&lt;A</span> <span class=cd-orange>NAME</span>=<span class=cd-green>1.1.32</span><span class=cd-blue>&gt;</span>He hath been out nine years, and away he shall<span class=cd-blue>&lt;/A&gt;</span><span class=cd-blue>&lt;br&gt;</span>
+  <span class=cd-blue>&lt;A</span> <span class=cd-orange>NAME</span>=<span class=cd-green>1.1.33</span><span class=cd-blue>&gt;</span>again. The king is coming.<span class=cd-blue>&lt;/A&gt;</span><span class=cd-blue>&lt;br&gt;</span>
+  <span class=cd-blue>&lt;p&gt;&lt;i&gt;</span>Sennet. Enter KING LEAR, CORNWALL, ALBANY, GONERIL, REGAN, CORDELIA, and Attendants<span class=cd-blue>&lt;/i&gt;&lt;/p&gt;</span>
+<span class=cd-blue>&lt;/blockquote&gt;</span>
+</pre>
+<p>I mean, uh—whaaa…?? Maybe I just don’t understand HTML. Jeremy is the MIT grad, I’ll keep my mouth shut.</p>
+<p>That aside, it was fairly straightforward to throw together a python script to transform the HTML version into a JSON format that would be easier for me to work with. Not <a href="https://github.com/kyle-silver/lear/blob/main/preprocessing/munge.py">trivial</a>, mind you, but doable without a <em>huge</em> investment of time.</p>
+<h2>Performance Considerations (No, Really)</h2>
+<p>The actual implementation of <code>lear</code> was pretty uneventful. Once I had a serviceable format for the text of the play, all I had to do was pick some random numbers for the act, scene, and lines—then format everything and print it to the console. But after I had a basic version working, I started thinking about performance. Now, I know that for a joke application like this one performance doesn’t <em>really</em> matter, but part of what makes <code>lear</code> amusing to me is the immediacy with which you’re punished for your mistakes. One second, you’re trying to clear some junk out of the terminal and then <em>bang!</em> Now there’s even more junk in the terminal, you squint to read it and remember that you installed <code>lear</code> as a joke months ago, grumble to yourself, and move on with your life. It should be funny, but the seconds of interruption should be after the text is already on screen. If after accidentally triggering it took more than a fraction of a second for everything to run, it would quickly overstay its welcome and be perceived as a hinderance rather than just a funny inconvenience.</p>
+<p>The program is structured so that each scene is its own JSON file, which at runtime is deserialized so that a few lines can be selected and printed. If these were actually stored as files separate from the application binary, we would need to spend time reading them into memory and dealing with file I/O, potentially across multiple operating systems. No thank you. Instead, since we know that we only want to read from these few files, we can use Rust’s <code>include_str!</code> macro to turn these files into <code>const</code> strings which are already stored in memory. It also means that lear can be distributed as a single static binary which doesn’t depend on any other files, which is nice.</p>
+<p>Now when <code>lear</code> runs, it picks the act and scene first—then only deserializes the JSON for that section as opposed to loading it in from a file or even worse: deserializing the entire play just to pick 5–7 lines. I suppose spending time parsing JSON is also time that could theoretically be saved, but the only alternative then would be inserting all of <em>King Lear</em> as a bunch of prefabricated structs in the source code. That would have been a nightmare to manage, and on top of that <a href="https://serde.rs">serde</a> is already so fast that deserializing a single scene (which is quite small compared to the play as a whole) is a cost that can be eaten rather imperceptibly.</p>
+<h2>Distribution</h2>
+<p>Now that I had a working program, I had to find a way to make it easily shareable with others. Thankfully, <code>cargo</code> makes it incredibly <a href="https://doc.rust-lang.org/cargo/commands/cargo-install.html">easy</a> to distribute Rust binaries—on the condition that your end-users are okay with compiling them from source. So technically we can say that there’s cross-platform support. Cool.</p>
+<p>The other main way that I get quirky CLI utilities is with Homebrew. That intimidated me because, although Ruby is a <a href="https://www.destroyallsoftware.com/talks/wat">normal language</a> used by <a href="https://github.com/readme/featured/why-the-lucky-stiff">cool people</a>, I didn’t know the first thing about it, except that it was like Python but with a “more interesting” take on syntax. Thankfully <a href="https://federicoterzi.com/blog/how-to-publish-your-rust-project-on-homebrew/">someone else</a> had already gone through the hassle of figuring out how to distribute Rust packages on homebrew and the process was relatively painless.</p>
+<p>And that’s the lesson you should take away from this—be weird, steal from others, and do as little work as possible.</p>
+</div></div><hr><p class="date-tag">Published 2022-06-26</p><div id="up-next"><div class="prev"></div><div class="next"> </div></div></div><div id="footer"><p class="flourish">&lt;/&gt;</p><p class="copyright">Kyle Silver c. 2022</p></div></body></html>
