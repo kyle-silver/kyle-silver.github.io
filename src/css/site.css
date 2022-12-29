@@ -47,7 +47,7 @@ h5 {
 }
 
 @media only screen and (max-width: 45rem) {
-    .nav-items  {
+    .nav-items {
         display: block;
     }
 }
@@ -169,6 +169,12 @@ span.published {
     text-decoration: none;
 }
 
+.clock-iframe {
+    width: 100%;
+    border: none;
+    overflow: hidden;
+}
+
 /* article styles */
 
 #article a {
@@ -182,6 +188,10 @@ span.published {
 
 #article ol.footnote {
     font-size: 0.8rem;
+}
+
+#article sup {
+    font-size: 0.7rem;
 }
 
 #article p {
@@ -244,6 +254,8 @@ audio {
 
 #article img {
     max-width: 100%;
+    display: block;
+    margin: auto;
 }
 
 /* kerning for musical symbols */
@@ -324,23 +336,27 @@ audio {
     color: var(--accent);
 }
 
-
 /** Swear on my life I'm only using this for a blinking cursor in a mock terminal */
-blink, .blink { animation: blink 2.5s step-end infinite; }
+blink,
+.blink {
+    animation: blink 2.5s step-end infinite;
+}
 
 @keyframes blink {
-  67% { opacity: 0 }
+    67% {
+        opacity: 0;
+    }
 }
 
 /** code highlighting **/
 .cd-blue {
-    color: var(--ayu-blue)
+    color: var(--ayu-blue);
 }
 
 .cd-orange {
-    color: var(--ayu-orange)
+    color: var(--ayu-orange);
 }
 
 .cd-green {
-    color: var(--ayu-green)
+    color: var(--ayu-green);
 }

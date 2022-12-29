@@ -6,8 +6,8 @@ month: "06"
 day: "26"
 order: 0
 preview: "I love quirky command line utilities. Sometimes the &ldquo;animal brain of Unix&rdquo; will happily provide its own weirdness&mdash;the <i>two-letter gang</i> (ed, dc, et al.) is always a safe bet for doing something other than what you expect—but it’s community-driven space where things really get wild"
-# next_title: Python is Better When You Impose Restrictions
-# next_link: "/blog/python-is-better-when-you-impose-restrictions"
+next_title: Making Clocks with JavaScript
+next_link: /blog/clocks
 ---
 
 I love quirky command line utilities. Sometimes the [&ldquo;animal brain of Unix&rdquo;](https://www.youtube.com/watch?v=vm1GJMp0QN4&t=2460) will happily provide its own weirdness&mdash;the _two-letter gang_ (ed, dc, et al.) is always a safe bet for doing something other than what you expect&mdash;but it&rsquo;s the community-driven space where things really get wild.
