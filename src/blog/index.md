@@ -4,4 +4,4 @@ title: Kyle Silver
 eleventyExcludeFromCollections: true
 ---
 
-Sometimes I blog about things. Best to not take anything here too seriously.
+Listen, either I blog or I tweet. This is actually the better of the two.
