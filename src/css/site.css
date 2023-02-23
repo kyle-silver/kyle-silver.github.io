@@ -240,11 +240,8 @@ a.tile-link:hover {
 
 code {
     font-family: "IBM Plex Mono", monospace;
-    /* font-weight: 600; */
-    font-size: 1rem;
-    /* font-size: 0.9rem; */
+    font-size: 1.15rem;
     border-radius: 4px;
-    /* font-weight: 100; */
     background-color: var(--code-bg);
     padding-left: 2.5px;
     padding-right: 2.5px;
