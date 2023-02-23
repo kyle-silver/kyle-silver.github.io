@@ -7,7 +7,6 @@ block content
       h2
         a(href="/blog" class="content-list-heading-wrapper")
           span.content-list-heading Recent Posts
-          span.content-list-hidden &nbsp;\#[more]
       .posts
         ul
           // up to 3 posts, but no more!
@@ -18,7 +17,6 @@ block content
       h2
         a(href="/compositions" class="content-list-heading-wrapper")
           span.content-list-heading Compositions
-          span.content-list-hidden &nbsp;\#[more]
       .posts
         ul
           each composition in collections.compositions.slice(0, 3)
@@ -28,7 +26,6 @@ block content
       h2
         a(href="/transcriptions" class="content-list-heading-wrapper")
           span.content-list-heading Transcriptions
-          span.content-list-hidden &nbsp;\#[more]
       .posts
         ul
           each transcription in collections.transcriptions.slice(0, 3)
