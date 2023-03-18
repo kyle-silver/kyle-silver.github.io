@@ -26,7 +26,7 @@ body {
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 body b {
@@ -245,6 +245,10 @@ code {
     background-color: var(--code-bg);
     padding-left: 2.5px;
     padding-right: 2.5px;
+}
+
+#draw-output {
+    line-height: 1.2;
 }
 
 /* media */
