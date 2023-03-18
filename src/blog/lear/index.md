@@ -5,7 +5,7 @@ year: 2022
 month: "06"
 day: "26"
 order: 0
-preview: "I love quirky command line utilities. Sometimes the &ldquo;animal brain of Unix&rdquo; will happily provide its own weirdness&mdash;the <i>two-letter gang</i> (ed, dc, et al.) is always a safe bet for doing something other than what you expect—but it’s community-driven space where things really get wild"
+preview: "I love quirky command line utilities. Sometimes the &ldquo;animal brain of Unix&rdquo; will happily provide its own weirdness&mdash;the <i>two-letter gang</i> (ed, dc, et al.) is always a safe bet for doing something other than what you expect—but it’s community-driven space where things really get wild&hellip;"
 next_title: Making Clocks with JavaScript
 next_link: /blog/clocks
 ---

@@ -5,7 +5,9 @@ year: 2022
 month: "12"
 day: "28"
 order: 10
-preview: "Back when I was in high school I had a Cadence Timescale watch, which, despite my parent&rsquo;s skepticism at the prospect of purchasing a timepiece from a no-name company with a sketchy website, they let me buy using their credit card"
+preview: "Back when I was in high school I had a Cadence Timescale watch, which, despite my parent&rsquo;s skepticism at the prospect of purchasing a timepiece from a no-name company with a sketchy website, they let me buy using their credit card&hellip;"
+next_title: "Dice Rolling Notation: Now With Recursion!"
+next_link: /blog/dice
 prev_title: "Lear: A Shakespearian Command Line Utility"
 prev_link: /blog/lear
 ---
