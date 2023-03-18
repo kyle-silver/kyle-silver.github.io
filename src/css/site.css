@@ -247,6 +247,10 @@ code {
     padding-right: 2.5px;
 }
 
+#draw-output {
+    line-height: 1.2;
+}
+
 /* media */
 
 iframe.video {
