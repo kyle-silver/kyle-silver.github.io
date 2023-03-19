@@ -53,7 +53,7 @@ export function colorful(input) {
         let c = input.charAt(i);
         if (/\d{1}/.test(c)) {
             style.set(tokens, "purple", "300");
-        } else if (/[\+\-=>\u00D7]{1}/.test(c)) {
+        } else if (/[\+\-=>\u00D7\*]{1}/.test(c)) {
             style.set(tokens, "orange", "300");
         } else if (c === "k") {
             if (/[\dl]{1}/.test(input.charAt(i + 1))) {
