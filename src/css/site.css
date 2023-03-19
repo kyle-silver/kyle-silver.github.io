@@ -26,7 +26,7 @@ body {
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 body b {
@@ -240,7 +240,7 @@ a.tile-link:hover {
 
 code {
     font-family: "IBM Plex Mono", monospace;
-    font-size: 1.15rem;
+    font-size: 1rem;
     border-radius: 4px;
     background-color: var(--code-bg);
     padding-left: 2.5px;
