@@ -56,11 +56,11 @@ export function colorful(input) {
         } else if (/[\+\-=>\u00D7\*]{1}/.test(c)) {
             style.set(tokens, "orange", "300");
         } else if (c === "k") {
-            if (/[\dl]{1}/.test(input.charAt(i + 1))) {
+            if (/[\dl\()]{1}/.test(input.charAt(i + 1))) {
                 style.set(tokens, "purple", "300");
             }
         } else if (c === "d" || c === "l") {
-            if (/\d{1}/.test(input.charAt(i + 1))) {
+            if (/[\d\(]{1}/.test(input.charAt(i + 1))) {
                 style.set(tokens, "purple", "300");
             }
         } else if (/\w{1}/.test(c)) {
