@@ -7,8 +7,9 @@ month: "03"
 day: "06"
 order: 0
 ---
-
+<br>
 <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/MD-DZPzmsCc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
 
 This one was a little bit tricky to get right. The individual notes and harmony weren&rsquo;t too bad, but the laid-back rhythmic feel at this slow of a tempo made it difficult to square the emotive and bluesy playing into the neat and orderly grid of western notation. A transcription can never capture the what truly makes a solo special&mdash;it can maybe get you 75 percent of the way there. The hope is that by transcribing you can focus more on that last 25 percent.
 

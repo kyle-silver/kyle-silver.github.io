@@ -2,5 +2,5 @@
 // a "blogpost" is all of the frontmatter from a markdown document
 mixin tile(post)
   .tile
-    h3 #[a(href=post.url) !{post.data.title}]&nbsp;#[span.tile-date !{post.data.year}-!{post.data.month}-!{post.data.day}]
+    h3 #[a(href=post.url) !{post.data.title}]&nbsp;#[span.tile-date !{post.data.year}&zwj;-&zwj;!{post.data.month}&zwj;-&zwj;!{post.data.day}]
     a(class='teaser-link' href=post.url) !{post.data.preview} #[b read&nbsp;more&nbsp;&raquo;]

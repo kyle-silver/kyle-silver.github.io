@@ -21,12 +21,12 @@ body {
     font-family: "IBM Plex Serif", serif;
     font-weight: 200;
     color: var(--black);
-    line-height: 1.4;
+    line-height: 1.6;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    font-size: 1.2rem;
+    font-size: 1.35rem;
 }
 
 body b {
@@ -39,6 +39,7 @@ h3,
 h4,
 h5 {
     font-family: "Ruda", sans-serif;
+    margin-bottom: 0;
 }
 
 /* header styles */
@@ -213,7 +214,8 @@ span.published {
 
 #article p {
     margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-top: 0;
+    /* margin-top: 2rem; */
 }
 
 a.tile-link {
@@ -236,6 +238,7 @@ a.tile-link:hover {
     background-color: var(--ayu-bg);
     color: var(--ayu-fg);
     overflow: auto;
+    line-height: 1.25rem;
 }
 
 code {
