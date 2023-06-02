@@ -1,5 +1,4 @@
 :root {
-    /* --accent: #ff8547; */
     --accent: #ff9940;
     --fg: #ffffff;
     --black: #000000;
@@ -19,14 +18,16 @@
 
 body {
     font-family: "IBM Plex Serif", serif;
-    font-weight: 200;
+    /* font-family: "Bitter", serif; */
+    font-weight: 300;
     color: var(--black);
     line-height: 1.6;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    font-size: 1.35rem;
+    font-size: 1.1rem;
+    padding: 8px;
 }
 
 body b {
@@ -46,7 +47,7 @@ h5 {
 
 .nav-items {
     font-family: "Ruda", sans-serif;
-    font-size: 1.15rem;
+    font-size: 1rem;
     display: flex;
     list-style: none;
     padding: 0;
@@ -56,9 +57,6 @@ h5 {
 @media only screen and (max-width: 45rem) {
     .nav-items {
         display: block;
-    }
-    body {
-        font-size: 1.3rem;
     }
 }
 
@@ -98,7 +96,7 @@ h5 {
 /* main content styles */
 
 .container {
-    max-width: 45rem;
+    max-width: 42rem;
     margin: auto;
 }
 
@@ -138,10 +136,14 @@ h1 {
 }
 
 .tile .tile-date {
-    font-size: 1.2rem;
+    /* font-size: 1.2rem;
     font-family: "IBM Plex Serif", serif;
+    font-weight: 300; */
+    /* color: var(--ayu-gray); */
+    /* font-family: "IBM Plex Serif", serif; */
     font-weight: 300;
-    color: var(--ayu-gray);
+    font-style: italic;
+    font-size: 0.95rem;
 }
 
 .date-tag {
@@ -205,7 +207,7 @@ span.published {
 }
 
 #article ol.footnote {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 #article sup {
