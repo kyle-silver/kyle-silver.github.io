@@ -1,6 +1,13 @@
+// a formatted date which won't break in a silly way when things are re-flowed
+mixin publication_date(post)
+  span !{post.data.year}&zwj;-&zwj;!{post.data.month}&zwj;-&zwj;!{post.data.day}
+
 
 // a "blogpost" is all of the frontmatter from a markdown document
 mixin tile(post)
   .tile
-    h3 #[a(href=post.url) !{post.data.title}]&nbsp;#[span.tile-date !{post.data.year}&zwj;-&zwj;!{post.data.month}&zwj;-&zwj;!{post.data.day}]
-    a(class='teaser-link' href=post.url) !{post.data.preview} #[b read&nbsp;more&nbsp;&raquo;]
+    h3 #[a(href=post.url) !{post.data.title}]
+    a(class='teaser-link' href=post.url)
+    | !{post.data.preview}&nbsp;#[b read&nbsp;more&nbsp;&raquo;]
+    span.tile-date &ensp;Published&nbsp;#[+publication_date(post)]
+    br

@@ -47,14 +47,14 @@ Common dice rolling options are supported:
 &ndash; Roll multiple dice:      <b>3d8 + 4</b>
 &ndash; Roll many, keep highest: <b>2d20k1 - 3</b>
 &ndash; Roll many, keep lowest:  <b>3d10kl2</b>
-&ndash; You can use parentheses: <b>3*(2d6 + 4)</b>
+&ndash; You can use parentheses: <b>3&nbsp;* (2d6 + 4)</b>
 &ndash; Add many rolls together: <b>3d8 + 2d6 + 2</b>
 <br />
 But! In addition to these normal operations,
 you can also nest expressions with arbitrary
 depth
 &ndash; <b>(2d6)d8</b>
-&ndash; <b>(d10 + 7)d(4d6* 2)k(d6) - 2</b>
+&ndash; <b>(d10 + 7)d(4d6 * 2)k(d6) - 2</b>
 &ndash; <b>((5d4)d3)d2</b>
 </pre>
 </div>
