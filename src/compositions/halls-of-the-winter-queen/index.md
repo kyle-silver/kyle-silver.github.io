@@ -1,7 +1,7 @@
 ---
 layout: post.pug
 title: Halls of the Winter Queen
-preview: I&rsquo;m part of a lovely Dungeons & Dragons campaign, and in early 2021 I wrote some ambient tracks to be an underscore for our sessions
+preview: I&rsquo;m part of a lovely Dungeons & Dragons campaign, and in early 2021 I wrote some ambient tracks to be an underscore for our sessions&hellip;
 order: 10
 year: 2021
 month: "07"
