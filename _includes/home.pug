@@ -6,30 +6,32 @@ block content
       p !{content}
       br
       h2
-        a(href="/blog" class="content-list-heading-wrapper")
-          span.content-list-heading Recent Posts
+        span.content-list-heading Recent Posts
       .posts
         ul
-          // up to 3 posts, but no more!
           each blogpost in collections.blogposts.slice(0, 3)
             include mixins.pug
             li #[+tile(blogpost)]
+        .see-all 
+          a(href="/blog") All blog posts&nbsp;&raquo;
       br
       h2
-        a(href="/compositions" class="content-list-heading-wrapper")
-          span.content-list-heading Compositions
+        span.content-list-heading Compositions
       .posts
         ul
           each composition in collections.compositions.slice(0, 3)
             include mixins.pug
             li #[+tile(composition)]
+        .see-all 
+          a(href="/compositions") All compositions&nbsp;&raquo;
       br
       h2
-        a(href="/transcriptions" class="content-list-heading-wrapper")
-          span.content-list-heading Transcriptions
+        span.content-list-heading Transcriptions
       .posts
         ul
           each transcription in collections.transcriptions.slice(0, 3)
             include mixins.pug
             li #[+tile(transcription)]
+        .see-all 
+          a(href="/transcriptions") All transcriptions&nbsp;&raquo;
       br

@@ -7,7 +7,8 @@ mixin publication_date(post)
 mixin tile(post)
   .tile
     h3 #[a(href=post.url) !{post.data.title}]
-    a(class='teaser-link' href=post.url)
-    | !{post.data.preview}&nbsp;#[b read&nbsp;more&nbsp;&raquo;]
+    a(class='teaser-link' href=post.url) !{post.data.preview}
+    br
+    a(class='read-more' href=post.url) read&nbsp;more&nbsp;&raquo;
     span.tile-date &ensp;Published&nbsp;#[+publication_date(post)]
     br

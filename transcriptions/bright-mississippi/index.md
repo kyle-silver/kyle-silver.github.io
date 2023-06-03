@@ -1,7 +1,7 @@
 ---
 layout: post.pug
 title: Bright Mississippi (Wynton Marsalis)
-preview: I originally transcribed this solo back in 2017 but was never really happy with the final result. The playing is just <i>so fast</i> that even after slowing the recording down to 10% speed in Audacity it was still hard to make out exactly what was going on. With technology failing me once again, I had to take a more <i>vibes-based</i> approach
+preview: I originally transcribed this solo back in 2017 but was never really happy with the final result. The playing is just <i>so fast</i> that even after slowing the recording down to 10% speed in Audacity it was still hard to make out exactly what was going on. With technology failing me once again, I had to take a more <i>vibes-based</i> approach&hellip;
 year: 2021
 month: "09"
 day: "04"

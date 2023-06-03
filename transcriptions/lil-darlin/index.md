@@ -1,7 +1,7 @@
 ---
 layout: post.pug
 title: Lil Darlin&rsquo; (Snooky Young)
-preview: This one was a little bit tricky to get right. The individual notes and harmony weren&rsquo;t too bad, but the laid-back rhythmic feel at this slow of a tempo made it difficult to square the emotive and bluesy playing into the neat and orderly grid of western notation
+preview: This one was a little bit tricky to get right. The individual notes and harmony weren&rsquo;t too bad, but the laid-back rhythmic feel at this slow of a tempo made it difficult to square the emotive and bluesy playing into the neat and orderly grid of western notation&hellip;
 year: 2021
 month: "03"
 day: "06"

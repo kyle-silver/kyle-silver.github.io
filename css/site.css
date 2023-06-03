@@ -135,14 +135,20 @@ h1 {
 }
 
 .tile .tile-date {
-    /* font-size: 1.2rem;
-    font-family: "IBM Plex Serif", serif;
-    font-weight: 300; */
-    /* color: var(--ayu-gray); */
-    /* font-family: "IBM Plex Serif", serif; */
-    font-weight: 300;
-    font-style: italic;
+    font-weight: 200;
     font-size: 0.95rem;
+}
+
+.posts .see-all {
+    text-align: right;
+    font-family: "Ruda";
+    font-weight: bold;
+}
+
+.read-more {
+    font-weight: bold;
+    font-family: "Ruda";
+    font-size: 1.1rem;
 }
 
 .date-tag {
