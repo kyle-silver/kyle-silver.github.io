@@ -46,12 +46,12 @@ All this is to say that I no longer have the watch and no way to obtain another.
 
 <h2 style="margin-top:0">Concentric Rings</h2>
 
-This design came to me not long after completing the Timescale clock. It has a lot more moving parts but thankfully was a bit easier for me to put together since it was not my first, but second rodeo. To explain what&rsquo;s going on here: the single hand will make a complete revolution once every twelve hours; the &ldquo;minute wheel&rdquo; and &ldquo;second wheel&ldquo; rotate once per hour and once per minute, respectively<sup>1</sup>. However, because the hour hand is moving along the circumference of the circle, the inner wheels also need to &ldquo;roll along&rdquo; in order to keep up.
+This design came to me not long after completing the Timescale clock. It has a lot more moving parts but thankfully was a bit easier for me to put together since it was not my first, but second rodeo. To explain what&rsquo;s going on here: the single hand will make a complete revolution once every twelve hours; the &ldquo;minute wheel&rdquo; and &ldquo;second wheel&ldquo; rotate once per hour and once per minute, respectively. However, because the hour hand is moving along the circumference of the circle, the inner wheels also need to &ldquo;roll along&rdquo; in order to keep up.
 
+<aside>
 If you look closely, you can just about see the minute wheel rotating&mdash;although for me at least it's nearly impossible to see the either wheel actually moving.
+</aside>
 
-<ol class="footnote">
-    <li>More accurately, these wheels meet back up with the hour hand once every hour and minute, respectively. The time it takes the minute wheel, for example, to go from 0&deg; to 360&deg; in absolute terms is actually twelve elevenths of an hour. For example, if the minute hand starts at 12:00, the &ldquo;00&rdquo; on the minute wheel will be perfectly vertical. At 1:00, the &ldquo;00&rdquo; will not be vertical again, but will have rotated 330&deg; and be aligned with the 1 on the hour ring. The speed of rotation is therefore 5.5 degrees per minute rather than the 6 it would need to be if it were to complete one full revolution per hour.</li>
-</ol>
+To be precise with the math, the wheels meet back up with the hour hand once every hour and minute, respectively. The time it takes the minute wheel, for example, to go from 0&deg; to 360&deg; in absolute terms is actually twelve elevenths of an hour. For example, if the minute hand starts at 12:00, the &ldquo;00&rdquo; on the minute wheel will be perfectly vertical. At 1:00, the &ldquo;00&rdquo; will not be vertical again, but will have rotated 330&deg; and be aligned with the 1 on the hour ring. The speed of rotation is therefore 5.5 degrees per minute rather than the 6 it would need to be if it were to complete one full revolution per hour.
 
 <br>
