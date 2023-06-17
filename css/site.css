@@ -14,6 +14,8 @@
     --ayu-green: #86b300;
     --ayu-purple: #a37acc;
     --ayu-teal: #4cbf99;
+    --container-max-width: 40rem;
+    --aside-width: 10rem;
 }
 
 body {
@@ -95,7 +97,7 @@ h5 {
 /* main content styles */
 
 .container {
-    max-width: 40rem;
+    max-width: var(--container-max-width);
     margin: auto;
 }
 
@@ -390,4 +392,33 @@ blink,
 
 .cd-green {
     color: var(--ayu-green);
+}
+
+/** asides **/
+aside {
+    font-size: smaller;
+    font-family: "Lato", sans-serif;
+    border-top: 1px solid var(--black);
+    border-bottom: 1px solid var(--black);
+    background-color: var(--ayu-bg);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 65rem) {
+    aside {
+        --gutter: calc((100vw - var(--container-max-width)) / 2);
+        border-bottom: none;
+        background-color: var(--fg);
+        margin-top: 6px;
+        padding: unset;
+        margin-bottom: unset;
+        display: block;
+        position: absolute;
+        width: var(--aside-width);
+        border-top: 3px solid var(--accent);
+        text-align: right;
+        left: calc(var(--gutter) - var(--aside-width) - 10px);
+    }
 }
