@@ -1,0 +1,325 @@
+.node {
+    font-family: "Jetbrains Mono", monospace;
+    width: fit-content;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.line {
+    position: absolute;
+    transform: translateX(-50%);
+    height: 0;
+    border-bottom: 1px solid var(--accent);
+}
+
+.vertical {
+    width: 0;
+    height: 1rem;
+    border-left: 1px solid var(--accent);
+    border-bottom: unset;
+}
+
+#animation {
+    position: relative;
+    height: 10rem;
+    --time: 10s;
+}
+
+#tier-one-bar {
+    left: 50%;
+    top: 2.7rem;
+    width: 30%;
+}
+
+#tier-one-left-tick {
+    left: 35%;
+    top: 2.7rem;
+}
+
+#tier-one-right-tick {
+    left: 65%;
+    top: 2.7rem;
+}
+
+#tier-one-center-tick {
+    left: 50%;
+    top: 2.7rem;
+    transform-origin: top;
+    transform: rotate(180deg);
+}
+
+.top {
+    animation: top var(--time) linear infinite;
+}
+
+@keyframes top {
+    0% {
+        opacity: 100%;
+    }
+    49.5% {
+        opacity: 100%;
+    }
+    52% {
+        opacity: 0%;
+    }
+    95% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+#add {
+    animation: add var(--time) linear infinite;
+}
+
+@keyframes add {
+    0% {
+        left: 50%;
+        top: 0;
+        opacity: 100%;
+    }
+    49.5% {
+        opacity: 100%;
+    }
+    66% {
+        opacity: 0%;
+    }
+    95% {
+        opacity: 0%;
+    }
+    100% {
+        left: 50%;
+        top: 0;
+        opacity: 100%;
+    }
+}
+
+#seven {
+    animation: seven var(--time) linear infinite;
+}
+
+@keyframes seven {
+    0% {
+        left: 50%;
+        top: 0;
+        opacity: 0%;
+    }
+    66% {
+        opacity: 0%;
+    }
+    82.5% {
+        opacity: 100%;
+    }
+    90% {
+        opacity: 100%;
+    }
+    95% {
+        opacity: 0%;
+    }
+    100% {
+        left: 50%;
+        top: 0;
+        opacity: 0%;
+    }
+}
+
+#one {
+    animation: one var(--time) linear infinite;
+}
+
+@keyframes one {
+    0% {
+        left: 35%;
+        top: 4rem;
+        opacity: 100%;
+    }
+    49.5% {
+        left: 35%;
+        top: 4rem;
+        opacity: 100%;
+    }
+    66% {
+        left: 50%;
+        top: 0;
+        opacity: 0%;
+    }
+    95% {
+        left: 35%;
+        top: 4rem;
+        opacity: 0%;
+    }
+    100% {
+        left: 35%;
+        top: 4rem;
+        opacity: 100%;
+    }
+}
+
+#multiply {
+    animation: multiply var(--time) linear infinite;
+}
+
+@keyframes multiply {
+    0% {
+        left: 65%;
+        top: 4rem;
+        opacity: 100%;
+    }
+    16.5% {
+        opacity: 100%;
+    }
+    33% {
+        opacity: 0%;
+    }
+    95% {
+        left: 65%;
+        top: 4rem;
+        opacity: 0%;
+    }
+    100% {
+        left: 65%;
+        top: 4rem;
+        opacity: 100%;
+    }
+}
+
+#six {
+    animation: six var(--time) linear infinite;
+}
+
+@keyframes six {
+    0% {
+        left: 65%;
+        top: 4rem;
+        opacity: 0%;
+    }
+    33% {
+        opacity: 0%;
+    }
+    49.5% {
+        left: 65%;
+        top: 4rem;
+        opacity: 100%;
+    }
+    66% {
+        left: 50%;
+        top: 0;
+        opacity: 0%;
+    }
+    100% {
+        left: 50%;
+        top: 0;
+        opacity: 0%;
+    }
+}
+
+#two {
+    animation: two var(--time) linear infinite;
+}
+
+@keyframes two {
+    0% {
+        left: 55%;
+        top: 8rem;
+        opacity: 100%;
+    }
+    16.5% {
+        left: 55%;
+        top: 8rem;
+        opacity: 100%;
+    }
+    33% {
+        left: 65%;
+        top: 4rem;
+        opacity: 0%;
+    }
+    95% {
+        left: 55%;
+        top: 8rem;
+        opacity: 0%;
+    }
+    100% {
+        left: 55%;
+        top: 8rem;
+        opacity: 100%;
+    }
+}
+
+#three {
+    animation: three var(--time) linear infinite;
+}
+
+@keyframes three {
+    0% {
+        left: 75%;
+        top: 8rem;
+        opacity: 100%;
+    }
+    16.5% {
+        left: 75%;
+        top: 8rem;
+        opacity: 100%;
+    }
+    33% {
+        left: 65%;
+        top: 4rem;
+        opacity: 0%;
+    }
+    95% {
+        left: 75%;
+        top: 8rem;
+        opacity: 0%;
+    }
+    100% {
+        left: 75%;
+        top: 8rem;
+        opacity: 100%;
+    }
+}
+
+#tier-two-bar {
+    left: 65%;
+    top: 6.7rem;
+    width: 20%;
+}
+
+#tier-two-left-tick {
+    left: 55%;
+    top: 6.7rem;
+}
+
+#tier-two-right-tick {
+    left: 75%;
+    top: 6.7rem;
+}
+
+#tier-two-center-tick {
+    left: 65%;
+    top: 6.7rem;
+    transform-origin: top;
+    transform: rotate(180deg);
+}
+
+.bottom {
+    animation: bottom var(--time) linear infinite;
+}
+
+@keyframes bottom {
+    0% {
+        opacity: 100%;
+    }
+    16.5% {
+        opacity: 100%;
+    }
+    19% {
+        opacity: 0%;
+    }
+    95% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
