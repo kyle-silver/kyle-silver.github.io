@@ -386,6 +386,18 @@ blink,
     color: var(--ayu-blue);
 }
 
+.cd-yellow {
+    color: var(--ayu-yellow);
+}
+
+.cd-black {
+    color: var(--black);
+}
+
+.cd-purple {
+    color: var(--ayu-purple);
+}
+
 .cd-orange {
     color: var(--ayu-orange);
 }

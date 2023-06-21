@@ -4,5 +4,25 @@
     background-color: var(--ayu-bg);
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.animation-with-code {
+    /* --ayu-orange with transparency */
+    --code-highlight: #fa8c3e24;
+    margin-bottom: 1.5rem;
+}
+
+.animation-with-code .code {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.animation-with-code .code-line {
+    display: inline-block;
+    margin-left: -10px;
+    padding-left: 10px;
+    margin-right: -10px;
+    padding-right: 10px;
+    width: 100%;
 }

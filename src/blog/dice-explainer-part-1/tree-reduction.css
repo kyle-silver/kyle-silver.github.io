@@ -19,10 +19,10 @@
     border-bottom: unset;
 }
 
-#animation {
+#tree-reduction-animation {
     position: relative;
     height: 10rem;
-    --time: 10s;
+    --time: 8s;
 }
 
 #tier-one-bar {
