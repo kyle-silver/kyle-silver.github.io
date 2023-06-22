@@ -1,4 +1,5 @@
 #simple-roll-eval-animation {
+    position: relative;
     border-bottom: unset;
     margin-bottom: unset;
     padding-left: 10px;
@@ -13,7 +14,19 @@
     width: 30px;
     height: 30px;
     position: relative;
-    animation: spin 11s linear infinite;
+    background-color: var(--ayu-bg);
+    z-index: 1;
+}
+
+.divider {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 75%;
+    border-left: 1px dashed var(--ayu-gray);
 }
 
 .dice-text {
@@ -23,13 +36,4 @@
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }

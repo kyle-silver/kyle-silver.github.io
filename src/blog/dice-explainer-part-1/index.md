@@ -46,7 +46,8 @@ Now, what would it look like to “execute” this roll instruction? We know tha
     <link href="simple-roll-eval.css" type="text/css" rel="stylesheet">
     <script src="simple-roll-eval.js" defer=true></script>
     <div class="animation-container" id="simple-roll-eval-animation">
-        <div class="dice" id="test-box"><div class="dice-text">X</div></div>
+        <div class="dice" id="test-die"><div class="dice-text">X</div></div>
+        <div class="divider"></div>
     </div>
     <div class="code" id="code-snippet">
         <div class="code-line" id="line-01">
