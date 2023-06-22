@@ -3,8 +3,8 @@
  * @prop {number} at the tick number at which the row should be highlighted
  * @prop {Array<number>} position the position at the beginning of the
  *      animation
- * @prop {number} d_theta the change in rotation (in degrees) from the previous
- *      keyframe
+ * @prop {number} d_theta the change in rotation (in degrees) over the course of
+ *      the ensuing keyframe
  */
 
 class Die {
@@ -49,7 +49,7 @@ class Die {
         element.style.top = `${y}%`;
 
         // update angle
-        const change_in_rotation = next.d_theta / Math.abs(duration);
+        const change_in_rotation = current.d_theta / Math.abs(duration);
         this.rotation += change_in_rotation;
         element.style.rotate = `${this.rotation}deg`;
     }
@@ -121,8 +121,8 @@ function animate_dice_roll() {
         { id: "line-05", at: 1000 },
     ])
     let die = new Die("test-die", 6, [
-        { at: 0, position: [0, 0], d_theta: 1500 },
-        { at: 1000, position: [95, 0], d_theta: 0 },
+        { at: 0, position: [0, 0], d_theta: 0 },
+        { at: 1000, position: [95, 0], d_theta: 1500 },
     ]);
     let _ = setInterval(frame, 10);
     let ticks = 0;
