@@ -3,7 +3,8 @@
  * @prop {number} at the tick number at which the row should be highlighted
  * @prop {Array<number>} position the position at the beginning of the
  *      animation
- * @prop {number} orientation the rotation (in degrees) at the start of the keyframe
+ * @prop {number} d_theta the change in rotation (in degrees) from the previous
+ *      keyframe
  */
 
 class Die {
@@ -16,6 +17,8 @@ class Die {
     constructor(id, value, keyframes) {
         this.id = id;
         this.value = value;
+        /** @type {number} absolute rotation in degrees */
+        this.rotation = 0;
         this.keyframes = keyframes;
     }
 
@@ -33,6 +36,8 @@ class Die {
         // boring math
         const duration = next.at - current.at;
         const percentage_complete = Math.abs((tick - current.at) / duration);
+
+        // calculate position
         const [x1, y1] = current.position;
         const [x2, y2] = next.position;
         const [dx, dy] = [x2 - x1, y2 - y1];
@@ -42,6 +47,11 @@ class Die {
         const element = document.getElementById(this.id);
         element.style.left = `${x}%`;
         element.style.top = `${y}%`;
+
+        // update angle
+        const change_in_rotation = next.d_theta / Math.abs(duration);
+        this.rotation += change_in_rotation;
+        element.style.rotate = `${this.rotation}deg`;
     }
 }
 
@@ -111,9 +121,8 @@ function animate_dice_roll() {
         { id: "line-05", at: 1000 },
     ])
     let die = new Die("test-die", 6, [
-        { at: 0, position: [0, 0], orientation: 0 },
-        { at: 1000, position: [95, 0], orientation: 0 },
-        { at: 2000, position: [0, 0], orientation: 0 },
+        { at: 0, position: [0, 0], d_theta: 1500 },
+        { at: 1000, position: [95, 0], d_theta: 0 },
     ]);
     let _ = setInterval(frame, 10);
     let ticks = 0;
@@ -124,24 +133,7 @@ function animate_dice_roll() {
         rows.update(ticks);
         die.update(ticks)
 
-        // // box movement
-        // const animation_frames = 2000;
-        // const percentage_completed = 100 * (ticks % animation_frames) / animation_frames;
-        // const one_way_distance = 2 * percentage_completed;
-        // const raw_position = percentage_completed > 50 ? 200 - (one_way_distance) : one_way_distance;
-        // const scaled_position = raw_position * 0.95;
-        // const element = document.getElementById("test-box");
-        // element.style.left = `${scaled_position}%`;
-
-        ticks += 1;
-
-        // prevent overflow
-        if (ticks > 2_000) {
-            ticks = 0;
-        }
-        if (pos >= 200) {
-            pos = 0;
-        }
+        ticks = (ticks + 1) % 2000;
     }
 }
 
