@@ -1,10 +1,21 @@
 /**
+ * @typedef RollProps
+ * @prop {"start" | "stop"} action whether the keyframe indicates that the die
+ *      should start or stop rolling
+ * @prop {Array<number>} [bounds] an array of length 2 which has the upper and
+ *      lower bounds of the die
+ * @prop {number} [rate] the number of ticks between each change to the value of
+ *      the die
+ */
+
+/**
  * @typedef DieKeyframe
  * @prop {number} at the tick number at which the row should be highlighted
  * @prop {Array<number>} position the position at the beginning of the
  *      animation
  * @prop {number} d_theta the change in rotation (in degrees) over the course of
  *      the ensuing keyframe
+ * @prop {"start" | "stop"} [roll] whether the die starts or stops rolling on that keyframe
  */
 
 class Die {
@@ -12,14 +23,39 @@ class Die {
     /**
      * @param {string} id the ID of the HTML element representing the die
      * @param {number} value the starting numeric value of the die
+     * @param {number} faces the number of faces on the die
      * @param {Array<DieKeyframe>} keyframes any animation keyframes
      */
-    constructor(id, value, keyframes) {
+    constructor(id, value, faces, keyframes) {
         this.id = id;
         this.value = value;
         /** @type {number} absolute rotation in degrees */
         this.rotation = 0;
+        this.faces = faces;
+        this.rolling = false;
         this.keyframes = keyframes;
+        this.set_text(this.value);
+    }
+
+    /**
+     * @param {string} text the text of the die
+     */
+    set_text(text) {
+        const element = document.getElementById(this.id);
+        const dice_text = element.querySelector(".dice-text");
+        dice_text.innerHTML = text;
+    }
+
+    /**
+     * 
+     * @returns {number}
+     */
+    roll_new_value() {
+        let new_value = Math.floor(Math.random() * this.faces) + 1;
+        if (new_value === this.value) {
+            new_value = ((this.value + 1) % this.faces) + 1;
+        }
+        return new_value;
     }
 
     /**
@@ -52,6 +88,18 @@ class Die {
         const change_in_rotation = current.d_theta / Math.abs(duration);
         this.rotation += change_in_rotation;
         element.style.rotate = `${this.rotation}deg`;
+
+        // roll stuff
+        if (current.roll === "stop") {
+            this.rolling = false;
+        } else if (current.roll === "start") {
+            this.rolling = true;
+        }
+
+        if (this.rolling && tick % 30 === 0) {
+            this.value = this.roll_new_value();
+            this.set_text(this.value);
+        }
     }
 }
 
@@ -120,13 +168,12 @@ function animate_dice_roll() {
         { id: "line-04", at: 900 },
         { id: "line-05", at: 1000 },
     ])
-    let die = new Die("test-die", 6, [
-        { at: 0, position: [0, 0], d_theta: 0 },
-        { at: 1000, position: [95, 0], d_theta: 1500 },
+    let die = new Die("test-die", 6, 20, [
+        { at: 0, position: [0, 0], d_theta: 0, roll: "stop" },
+        { at: 1000, position: [95, 0], d_theta: 1500, roll: "start" },
     ]);
     let _ = setInterval(frame, 10);
     let ticks = 0;
-    let pos = 0;
 
     function frame() {
         // row highlight stuff
