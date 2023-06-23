@@ -57,6 +57,21 @@ Now, what would it look like to “execute” this roll instruction? We know tha
         </div>
         <div class="divider" id="a01-divider-1"></div>
         <div class="divider" id="a01-divider-2"></div>
+        <div class="dice-data" id="a01-self-dot-dice">
+            </span><span class="cd-blue"><i>self</i></span><span class="cd-orange">.</span><span class="cd-black">dice</span>
+            <span class="cd-orange">=</span>
+            <span class="cd-purple">3</span>
+        </div>
+        <div class="dice-data" id="a01-n-counter-container">
+            </span><span class="cd-black">n</span>
+            <span class="cd-orange">=</span>
+            <span class="cd-black" id="a01-n-counter">_</span>
+        </div>
+        <div class="dice-data" id="a01-total-counter-container">
+            </span><span class="cd-black">total</span>
+            <span class="cd-orange">=</span>
+            <span class="cd-purple" id="a01-total-counter">_</span>
+        </div>
     </div>
     <div class="code" id="a01-code-snippet">
         <div class="code-line" id="a01-line-01">

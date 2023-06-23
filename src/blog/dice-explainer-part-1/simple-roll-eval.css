@@ -46,3 +46,21 @@
     position: absolute;
     transform: translate(-50%, -50%);
 }
+
+.dice-data {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2px;
+}
+
+#a01-n-counter-container {
+    left: 33%;
+    margin-left: 10px;
+}
+
+#a01-total-counter-container {
+    left: 66%;
+    margin-left: 10px;
+}
