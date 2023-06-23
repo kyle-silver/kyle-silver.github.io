@@ -46,17 +46,26 @@ Now, what would it look like to “execute” this roll instruction? We know tha
     <link href="simple-roll-eval.css" type="text/css" rel="stylesheet">
     <script src="simple-roll-eval.js" defer=true></script>
     <div class="animation-container" id="simple-roll-eval-animation">
-        <div class="dice" id="test-die"><div class="dice-text">7</div></div>
-        <div class="divider"></div>
+        <div class="dice" id="a01-die-1">
+            <div class="dice-text"></div>
+        </div>
+        <div class="dice" id="a01-die-2">
+            <div class="dice-text"></div>
+        </div>
+        <div class="dice" id="a01-die-3">
+            <div class="dice-text"></div>
+        </div>
+        <div class="divider" id="a01-divider-1"></div>
+        <div class="divider" id="a01-divider-2"></div>
     </div>
-    <div class="code" id="code-snippet">
-        <div class="code-line" id="line-01">
+    <div class="code" id="a01-code-snippet">
+        <div class="code-line" id="a01-line-01">
             <span class="cd-orange">impl</span>
             <span class="cd-blue">Roll</span>
             <span class="cd-black">{</span>
         </div>
         <br>
-        <div class="code-line" id="line-02">
+        <div class="code-line" id="a01-line-02">
             &nbsp;&nbsp;&nbsp;&nbsp;
             <span class="cd-orange">fn</span>
             <span class="cd-yellow">roll</span><span class="cd-black">(</span><span class="cd-orange">&</span><span class="cd-blue"><i>self</i></span><span class="cd-black">,</span>
@@ -67,7 +76,7 @@ Now, what would it look like to “execute” this roll instruction? We know tha
             <span class="cd-black">{</span>
         </div>
         <br>
-        <div class="code-line" id="line-03">
+        <div class="code-line" id="a01-line-03">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="cd-orange">let mut</span>
             <span class="cd-black">total</span>
@@ -75,7 +84,7 @@ Now, what would it look like to “execute” this roll instruction? We know tha
             <span class="cd-purple">0</span><span class="cd-black">;</span>
         </div>
         <br>
-        <div class="code-line" id="line-04">
+        <div class="code-line" id="a01-line-04">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="cd-orange">for</span>
             <span class="cd-black">n</span>
@@ -83,7 +92,7 @@ Now, what would it look like to “execute” this roll instruction? We know tha
             <span class="cd-black">(</span><span class="cd-purple">1</span><span class="cd-orange">..=</span><span class="cd-blue"><i>self</i></span><span class="cd-orange">.</span><span class="cd-black">dice) {</span>
         </div>
         <br>
-        <div class="code-line" id="line-05">
+        <div class="code-line" id="a01-line-05">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="cd-orange">let</span>
             <span class="cd-black">rolled_value</span>
@@ -91,7 +100,7 @@ Now, what would it look like to “execute” this roll instruction? We know tha
             <span class="cd-black">rng</span><span class="cd-orange">.</span><span class="cd-yellow">gen_range</span><span class="cd-black">(</span><span class="cd-purple">1</span><span class="cd-orange">..=</span><span class="cd-blue"><i>self</i></span><span class="cd-orange">.</span><span class="cd-black">sides);</span>
         </div>
         <br>
-        <div class="code-line" id="line-06">
+        <div class="code-line" id="a01-line-06">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="cd-black">total</span>
             <span class="cd-orange">=</span>
@@ -100,23 +109,23 @@ Now, what would it look like to “execute” this roll instruction? We know tha
             <span class="cd-black">rolled_value;</span>
         </div>
         <br>
-        <div class="code-line" id="line-07">
+        <div class="code-line" id="a01-line-07">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="cd-black">}</span>
         </div>
         <br>
-        <div class="code-line" id="line-08">
+        <div class="code-line" id="a01-line-08">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="cd-orange">return</span>
             <span class="cd-black">total;</span>
         </div>
         <br>
-        <div class="code-line" id="line-09">
+        <div class="code-line" id="a01-line-09">
             &nbsp;&nbsp;&nbsp;&nbsp;
             <span class="cd-black">}</span>
         </div>
         <br>
-        <div class="code-line" id="line-10">
+        <div class="code-line" id="a01-line-10">
             <span class="cd-black">}</span>
         </div>
     </div>

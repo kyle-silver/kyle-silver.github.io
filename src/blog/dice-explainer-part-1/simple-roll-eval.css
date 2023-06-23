@@ -4,6 +4,7 @@
     margin-bottom: unset;
     padding-left: 10px;
     padding-right: 10px;
+    height: 150px;
 }
 
 .dice {
@@ -13,7 +14,8 @@
     border-radius: 5px;
     width: 30px;
     height: 30px;
-    position: relative;
+    position: absolute;
+    transform: translate(-50%, -50%);
     background-color: var(--ayu-bg);
     z-index: 1;
 }
@@ -22,11 +24,18 @@
     margin: auto;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     width: 0;
-    height: 75%;
+    height: 90%;
     border-left: 1px dashed var(--ayu-gray);
+}
+
+#a01-divider-1 {
+    left: 33.3%;
+}
+
+#a01-divider-2 {
+    left: 66.6%;
 }
 
 .dice-text {

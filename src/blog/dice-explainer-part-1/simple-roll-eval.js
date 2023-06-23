@@ -62,12 +62,14 @@ class Die {
      * @param {number} tick the current tick number
      */
     update(tick) {
-        const [current, next] = this.keyframes.slice(0, 2);
-        if (next.at === tick) {
+        if (this.keyframes[1].at === tick) {
+            const [current, next] = this.keyframes.splice(0, 2);
             this.keyframes.unshift(next);
             this.keyframes.push(current);
-            return;
+            console.log(this.keyframes);
         }
+
+        const [current, next] = this.keyframes.slice(0, 2);
 
         // boring math
         const duration = next.at - current.at;
@@ -84,12 +86,16 @@ class Die {
         element.style.left = `${x}%`;
         element.style.top = `${y}%`;
 
+        if (tick % 100 === 0) {
+            console.log(current.at, next.at, tick, percentage_complete);
+        }
+
         // update angle
         const change_in_rotation = current.d_theta / Math.abs(duration);
         this.rotation += change_in_rotation;
-        element.style.rotate = `${this.rotation}deg`;
+        element.style.transform = `translate(-50%, -50%) rotate(${this.rotation}deg)`;
 
-        // roll stuff
+        // roll stuff 
         if (current.roll === "stop") {
             this.rolling = false;
         } else if (current.roll === "start") {
@@ -158,19 +164,23 @@ class RowHighlights {
 function animate_dice_roll() {
     // let rows = new Rows(["line-03", "line-04", "line-05", "line-06", "line-07"])
     let rows = new RowHighlights([
-        { id: "line-03", at: 0 },
-        { id: "line-04", at: 100 },
-        { id: "line-05", at: 200 },
-        { id: "line-06", at: 500 },
-        { id: "line-07", at: 600 },
-        { id: "line-06", at: 700 },
-        { id: "line-05", at: 800 },
-        { id: "line-04", at: 900 },
-        { id: "line-05", at: 1000 },
+        { id: "a01-line-03", at: 0 },
+        { id: "a01-line-04", at: 100 },
+        { id: "a01-line-05", at: 200 },
+        { id: "a01-line-06", at: 500 },
+        { id: "a01-line-07", at: 600 },
+        { id: "a01-line-06", at: 700 },
+        { id: "a01-line-05", at: 800 },
+        { id: "a01-line-04", at: 900 },
+        { id: "a01-line-05", at: 1000 },
     ])
-    let die = new Die("test-die", 6, 20, [
-        { at: 0, position: [0, 0], d_theta: 0, roll: "stop" },
-        { at: 1000, position: [95, 0], d_theta: 1500, roll: "start" },
+    let die = new Die("a01-die-1", 0, 20, [
+        { at: 0, position: [33.3 / 2, 15], d_theta: 0 },
+        { at: 200, position: [33.3 / 2, 15], d_theta: 0 },
+        { at: 500, position: [50, 15], d_theta: 720, roll: "start" },
+        { at: 1000, position: [50, 15], d_theta: 0, roll: "stop" },
+        { at: 1500, position: [66.6 + (33.3 / 2), 15], d_theta: 0 },
+        { at: 10_000, position: [66.6 + (33.3 / 2), 15], d_theta: 0 },
     ]);
     let _ = setInterval(frame, 10);
     let ticks = 0;
@@ -180,7 +190,7 @@ function animate_dice_roll() {
         rows.update(ticks);
         die.update(ticks)
 
-        ticks = (ticks + 1) % 2000;
+        ticks = (ticks + 1) % 10_000;
     }
 }
 
