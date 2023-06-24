@@ -3,7 +3,8 @@
  * @prop {number} at the tick number at which the row should be highlighted
  * @prop {Array<number>} position the position at the beginning of the
  *      animation
- * @prop {number} d_theta the change in rotation (in degrees) over the course of
+ * @prop {number} [set_rotation] set the base rotation offset 
+ * @prop {number} [d_theta] the change in rotation (in degrees) over the course of
  *      the ensuing keyframe
  * @prop {"start" | "stop"} [roll] whether the die starts or stops rolling on 
  *      that keyframe
@@ -63,7 +64,6 @@ class Die {
 
         // update text values
         if (current.at === tick && current.value !== undefined) {
-            console.log(`should set value at ${tick} to ${current.value}`);
             this.value = current.value;
             this.set_text(this.value);
         }
@@ -83,10 +83,19 @@ class Die {
         element.style.left = `${x}%`;
         element.style.top = `${y}%`;
 
+        // update base rotation
+        if (current.set_rotation !== undefined) {
+            this.rotation = current.set_rotation;
+            console.log(`setting rotation to ${current.set_rotation}`);
+            element.style.transform = `translate(-50%, -50%) rotate(${this.rotation}deg)`;
+        }
+
         // update angle
-        const change_in_rotation = current.d_theta / Math.abs(duration);
-        this.rotation += change_in_rotation;
-        element.style.transform = `translate(-50%, -50%) rotate(${this.rotation}deg)`;
+        if (current.d_theta) {
+            const change_in_rotation = current.d_theta / Math.abs(duration);
+            this.rotation += change_in_rotation;
+            element.style.transform = `translate(-50%, -50%) rotate(${this.rotation}deg)`;
+        }
 
         // roll stuff 
         if (current.roll === "stop") {
@@ -179,34 +188,34 @@ function animate_dice_roll() {
     ])
     let dice = [
         new Die("a01-die-1", 0, 6, [
-            { at: 0, position: [16.65, 15], d_theta: 0, value: 0 },
-            { at: 200, position: [16.65, 15], d_theta: 0 },
-            { at: 500, position: [50, 15], d_theta: 0 },
+            { at: 0, position: [16.65, 15], value: 0, set_rotation: 0 },
+            { at: 200, position: [16.65, 15] },
+            { at: 500, position: [50, 15] },
             { at: 502, position: [50, 15], d_theta: 720, roll: "start" },
-            { at: 1002, position: [50, 15], d_theta: 0, roll: "stop" },
-            { at: 1004, position: [50, 15], d_theta: 0 },
-            { at: 1404, position: [83.25, 15], d_theta: 0 },
-            { at: 3999, position: [83.25, 15], d_theta: 0 },
+            { at: 1002, position: [50, 15], roll: "stop" },
+            { at: 1004, position: [50, 15] },
+            { at: 1404, position: [83.25, 15] },
+            { at: 3999, position: [83.25, 15] },
         ]),
         new Die("a01-die-2", 0, 6, [
-            { at: 0, position: [16.65, 40], d_theta: 0, value: 0 },
-            { at: 1500, position: [16.65, 40], d_theta: 0 },
-            { at: 1800, position: [50, 40], d_theta: 0 },
+            { at: 0, position: [16.65, 40], value: 0, set_rotation: 0 },
+            { at: 1500, position: [16.65, 40] },
+            { at: 1800, position: [50, 40] },
             { at: 1802, position: [50, 40], d_theta: 720, roll: "start" },
-            { at: 2202, position: [50, 40], d_theta: 0, roll: "stop" },
-            { at: 2204, position: [50, 40], d_theta: 0 },
-            { at: 2604, position: [83.25, 40], d_theta: 0 },
-            { at: 3999, position: [83.25, 40], d_theta: 0 },
+            { at: 2202, position: [50, 40], roll: "stop" },
+            { at: 2204, position: [50, 40] },
+            { at: 2604, position: [83.25, 40] },
+            { at: 3999, position: [83.25, 40] },
         ]),
         new Die("a01-die-3", 0, 6, [
-            { at: 0, position: [16.65, 65], d_theta: 0, value: 0 },
-            { at: 2700, position: [16.65, 65], d_theta: 0 },
-            { at: 3000, position: [50, 65], d_theta: 0 },
+            { at: 0, position: [16.65, 65], value: 0, set_rotation: 0 },
+            { at: 2700, position: [16.65, 65] },
+            { at: 3000, position: [50, 65] },
             { at: 3002, position: [50, 65], d_theta: 720, roll: "start" },
-            { at: 3402, position: [50, 65], d_theta: 0, roll: "stop" },
-            { at: 3404, position: [50, 65], d_theta: 0 },
-            { at: 3804, position: [83.25, 65], d_theta: 0 },
-            { at: 3999, position: [83.25, 65], d_theta: 0 },
+            { at: 3402, position: [50, 65], roll: "stop" },
+            { at: 3404, position: [50, 65] },
+            { at: 3804, position: [83.25, 65] },
+            { at: 3999, position: [83.25, 65] },
         ]),
     ];
     let _ = setInterval(frame, 7);
